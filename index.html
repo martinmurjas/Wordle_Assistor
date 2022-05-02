@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html title="Wordle Assistor">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="wordleWordList.js"></script>
+    <script src="wordListScripts.js" defer></script>
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <div id="title">
+      <h1><span>Wordle</span> Assistor</h1>
+    </div>
+    <div id="container">
+      <div id="errorMessage">
+        <div style="display: none">Not enough letters</div>
+        <div style="display: none">Not in word list</div>
+      </div>
+      <div id="guessInputs">
+        <div>
+          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+        </div>
+      </div>
+      <div id="guesses">
+        <h3>Guesses</h3>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+        <div class="guess">
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+          <h2></h2>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Potential</h3>
+      <div>
+        <span>W</span><span>o</span><span>r</span><span>d</span><span>s</span>
+      </div>
+      <div id="potentialGuesses"></div>
+    </div>
+  </body>
+</html>

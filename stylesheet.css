@@ -1,0 +1,324 @@
+@font-face {
+  font-family: "titleFont";
+  src: url("fonts/karnakcondensed-normal-700.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+#title {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: solid 1px #d3d6da;
+  background-color: white;
+}
+
+#title span {
+  font-family: "titleFont";
+  font-size: 1.5em;
+}
+
+#title h1 {
+  font-weight: 200;
+  margin: 0.2em;
+}
+
+#errorMessage {
+  width: 100%;
+  height: 15vh;
+  min-height: 5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#errorMessage > div {
+  background-color: #b31e28;
+  border-radius: 0.3em;
+  color: white;
+  padding: 1.2em;
+  font-weight: 700;
+}
+
+#guessInputs > div,
+.guess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#guessInputs input,
+.guess h2 {
+  margin: 0.2rem;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 2em;
+  padding: 0;
+  text-transform: uppercase;
+  overflow: hidden;
+  font-weight: 600;
+  border-color: #d3d6da;
+  border-style: solid;
+  outline: none;
+  caret-color: transparent;
+  border-width: 2px;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#guessInputs input.noMoreGuesses {
+  background-color: #eff3f7;
+}
+
+.guess h2 {
+  color: white;
+}
+
+.invalidInput {
+  animation-name: shake;
+  animation-duration: 0.5s;
+}
+
+#guessInputs input.entered {
+  border-color: #878a8c;
+  animation-name: pop;
+  animation-duration: 0.1s;
+}
+
+input:disabled {
+  color: black;
+  border-color: #878a8c;
+  background-color: white;
+}
+
+body > div:last-child {
+  padding-top: 4.4em;
+  flex-basis: 60%;
+}
+
+body > div:last-child h3 {
+  height: 5vh;
+  margin: 0.5em 0em 0.5em 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+body > div:last-child > div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+body > div:last-child span {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0px 2px 0px 2px;
+  border: solid 2px #d3d6da;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+body > div:last-child span:first-child {
+  border: solid 2px #6aaa65;
+  background-color: #6aaa65;
+  color: white;
+}
+
+body > div:last-child span:nth-child(4) {
+  border: solid 2px #c9b458;
+  background-color: #c9b458;
+  color: white;
+}
+
+body > div:nth-child(2) {
+  flex-basis: 40%;
+}
+
+#container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-height: 775px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4.4em;
+  margin: 0em 1em;
+}
+
+#potentialGuesses {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#potentialGuesses p {
+  background-color: white;
+  border: solid 2px #d3d6da;
+  padding: 1em;
+  margin: 0.5em;
+  flex-basis: 6em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+#potentialGuesses p:hover {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  color: white;
+}
+
+.guess h2 {
+  color: white;
+  animation-duration: 0.8s;
+}
+
+.guess h2.excluded {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  animation-name: flipExcluded;
+}
+
+.guess h2.newExcluded {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  animation-name: flipNew;
+}
+
+.guess h2.newCorrect {
+  background-color: #6aaa65;
+  border-color: #6aaa65;
+  animation-name: flipNew;
+}
+
+.guess h2.included {
+  background-color: #c9b458;
+  border-color: #c9b458;
+  animation-name: flipIncluded;
+}
+
+.guess h2.correct {
+  background-color: #6aaa65;
+  border-color: #6aaa65;
+  animation-name: flipCorrect;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  14% {
+    transform: translateX(5px);
+  }
+  28% {
+    transform: translateX(-5px);
+  }
+  42% {
+    transform: translateX(5px);
+  }
+  56% {
+    transform: translateX(-5px);
+  }
+  70% {
+    transform: translateX(5px);
+  }
+  84% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes flipNew {
+  0% {
+    border-color: #d3d6da;
+    background-color: white;
+  }
+  10% {
+    border-color: #d3d6da;
+    background-color: white;
+  }
+  25% {
+    transform: rotatex(-90deg);
+  }
+}
+
+@keyframes flipCorrect {
+  0% {
+    border-color: #c9b458;
+    background-color: #c9b458;
+  }
+  25% {
+    transform: rotatex(-90deg);
+  }
+}
+
+@keyframes flipExcluded {
+  0% {
+    background-color: #6aaa65;
+    border-color: #6aaa65;
+  }
+  25% {
+    transform: rotatex(-90deg);
+  }
+}
+
+@keyframes flipIncluded {
+  0% {
+    background-color: #787c7e;
+    border-color: #787c7e;
+  }
+  25% {
+    transform: rotatex(-90deg);
+  }
+}
+
+@media screen and (max-width: 849px) {
+  body {
+    flex-direction: column;
+  }
+
+  #container {
+    display: flex;
+    width: 100%;
+    position: initial;
+  }
+
+  body > div:last-child {
+    width: 100%;
+    padding: 2em;
+  }
+}
