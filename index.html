@@ -12,72 +12,90 @@
       <h1><span>Wordle</span> Assistor</h1>
     </div>
     <div id="container">
-      <div id="errorMessage">
-        <div style="display: none">Not enough letters</div>
-        <div style="display: none">Not in word list</div>
+      <div id="guessContainer">
+        <div id="errorMessage">
+          <div style="display: none">Not enough letters</div>
+          <div style="display: none">Not in word list</div>
+        </div>
+        <div id="guessInputs">
+          <div>
+            <input type="text" maxlength="1" pattern="[A-Za-z]" />
+            <input type="text" maxlength="1" pattern="[A-Za-z]" />
+            <input type="text" maxlength="1" pattern="[A-Za-z]" />
+            <input type="text" maxlength="1" pattern="[A-Za-z]" />
+            <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          </div>
+        </div>
+        <div id="guesses">
+          <h3>Guesses</h3>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+          <div class="guess">
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+          </div>
+        </div>
       </div>
-      <div id="guessInputs">
+      <div id="howToContainer">
+        <h3>How To Use</h3>
+        <p>
+          The Wordle Assistor is used to help you find all potential guesses
+          that can be used while playing Wordle. You will need to have the
+          Wordle game open alongside the assistor to get the most out of it.
+        </p>
+        <p>Enter your first guess into the assistor and press enter</p>
+        <img src="images/enterGuess.gif" />
+        <p>Mimic the Wordle colors by clicking a letter to toggle the colors</p>
+        <img src="images/toggle.gif" />
+        <p>
+          Enter your next guess or click one of the guess options for your next
+          word
+        </p>
+        <img src="images/wordButton.gif" />
+      </div>
+      <div id="potentialGuessContainer">
+        <h3>Potential</h3>
         <div>
-          <input type="text" maxlength="1" pattern="[A-Za-z]" />
-          <input type="text" maxlength="1" pattern="[A-Za-z]" />
-          <input type="text" maxlength="1" pattern="[A-Za-z]" />
-          <input type="text" maxlength="1" pattern="[A-Za-z]" />
-          <input type="text" maxlength="1" pattern="[A-Za-z]" />
+          <span>W</span><span>o</span><span>r</span><span>d</span><span>s</span>
         </div>
+        <div id="potentialGuesses"></div>
       </div>
-      <div id="guesses">
-        <h3>Guesses</h3>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-        <div class="guess">
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-          <h2></h2>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h3>Potential</h3>
-      <div>
-        <span>W</span><span>o</span><span>r</span><span>d</span><span>s</span>
-      </div>
-      <div id="potentialGuesses"></div>
     </div>
   </body>
 </html>

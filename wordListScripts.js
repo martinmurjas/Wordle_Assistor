@@ -69,7 +69,7 @@ const clearPotentialWords = () => {
   }
 };
 
-populatePotentialWords();
+//populatePotentialWords();
 
 const removeExcluded = (letter) => {
   if (excludedLetters.includes(letter)) {

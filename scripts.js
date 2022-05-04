@@ -4,7 +4,7 @@ const errorMessages = document.querySelectorAll("#errorMessage div");
 
 const clearInputKeys = [8, 46];
 
-let keyPressed = "";
+//let keyPressed = "";
 
 document.querySelector("body").addEventListener("click", () => {
   setFocus();
@@ -17,9 +17,14 @@ const previousGuesses = document.querySelector("#guesses");
 const potentialGuesses = document.getElementById("potentialGuesses");
 
 guess.addEventListener("keydown", (ev) => {
-  let keyPressed = ev.keyCode;
-  let previousInputValue = ev.target.value;
-  let previousInputBox = ev.target.previousElementSibling;
+  const keyPressed = ev.keyCode;
+  //const previousInputValue = ev.target.value;
+  const howToContainer = document.querySelector("#howToContainer");
+  const potentialGuessContainer = document.querySelector(
+    "#potentialGuessContainer"
+  );
+  const previousInputBox = ev.target.previousElementSibling;
+
   if (!/[a-zA-Z]/.test(ev.key) || keyPressed === 9) {
     ev.preventDefault();
   } else if (
@@ -59,6 +64,14 @@ guess.addEventListener("keydown", (ev) => {
     } else {
       enterGuess(inputList);
       clearInputs(inputList);
+      if (guessCounter === 1) {
+        howToContainer.className = "slideOut";
+        setTimeout(() => {
+          howToContainer.className = "disappear";
+          potentialGuessContainer.className = "visible";
+        }, 1500);
+      }
+
       setFocus();
     }
   }
