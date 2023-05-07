@@ -15,7 +15,7 @@ Wordle Assistor is a web application designed to assist users with playing the p
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/wordle-assistor.git`
+1. Clone the repository: `git clone https://github.com/martinmurjas/wordle-assistor.git`
 2. Open the `index.html` file in your web browser
 
 ## Usage
