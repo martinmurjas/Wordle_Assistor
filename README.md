@@ -1,15 +1,38 @@
 # Wordle Assistor
 
-I created a 'Wordle Assistor' application to help present potential guesses for the New York Times Wordle game. Check it out here: https://martinmurjas.github.io/wordle-assistor/
+Wordle Assistor is a web application designed to assist users with playing the popular word game "Wordle" from The New York Times. The application provides users with potential guesses for the game based on the clues given. 
 
-To use the application, begin typing the first guess used in Wordle. Once entered and the guess moved to the 'guess' section.
+## Features
+
+- Provides possible solutions based on the user's input
+- Simple and easy-to-use interface that matches the Wordle UI
+
+## Technologies Used
+
+- JavaScript
+- HTML
+- CSS
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/yourusername/wordle-assistor.git`
+2. Open the `index.html` file in your web browser
+
+## Usage
+
+1. Enter your first guess into the top input field and press enter. The guess is then moved to your guess list below
 
 ![image](https://martinmurjas.github.io/wordle-assistor/images/enterGuess.gif)
 
-Clicking on the letters toggles the letters' status (ie in word but wrong location, in correct location, not in word).
+2. Click the letters to toggle through the three colors which represent the letter status:
+  - Grey: Letter is not included in the word
+  - Yellow: Letter is included in the word but in the wrong place
+  - Green: Letter is included in the word and in the correct place
 
 ![image](https://martinmurjas.github.io/wordle-assistor/images/toggle.gif)
 
-The 'Potential Words' section shows all remaining words in the Wordle dictionary that can be used. You can either type the next guess or click one of the words in this list to add it to the guess section
+3. All potential guesses which meet the letters criteria will be displayed. Select your next word either by typing it into the input or clicking on the word from the list
 
 ![image](https://martinmurjas.github.io/wordle-assistor/images/wordButton.gif)
+
+4. Continue until you have solved the Wordle puzzle for the day.
