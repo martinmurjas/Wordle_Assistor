@@ -1,6 +1,8 @@
 # Wordle Assistor
 
-Wordle Assistor is a web application designed to assist users with playing the popular word game "Wordle" from The New York Times. The application provides users with potential guesses for the game based on the clues given. 
+Wordle Assistor is a web application designed to assist users with playing the popular word game "Wordle" from The New York Times. The application provides users with potential guesses for the game based on the clues given.
+
+Check it out here: https://martinmurjas.github.io/wordle-assistor/
 
 ## Features
 
